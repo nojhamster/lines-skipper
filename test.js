@@ -1,11 +1,11 @@
 'use strict';
 
-var assert  = require('assert');
-var Skipper = require('./index.js');
+var assert = require('assert');
+var skip   = require('./index.js');
 
 describe('The skipper', function () {
   it('should correctly skip lines of a given array', function (done) {
-    var skipper = new Skipper([2,4,6]);
+    var skipper = skip([2,4,6]);
 
     var result = '';
     skipper.on('readable', function () { result += skipper.read(); });
@@ -20,8 +20,8 @@ describe('The skipper', function () {
   });
 
   it('should throw an error if argument is not an array', function (done) {
-    assert.throws(function () { return new Skipper('string'); });
-    assert.throws(function () { return new Skipper({ an: 'object' }); });
+    assert.throws(function () { return skip('string'); });
+    assert.throws(function () { return skip({ an: 'object' }); });
     done();
   });
 });

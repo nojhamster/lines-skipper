@@ -3,7 +3,7 @@
 var util      = require('util');
 var Transform = require('stream').Transform || require('readable-stream').Transform;
 
-function linesSkipper(linesToRemove) {
+function LinesSkipper(linesToRemove) {
   Transform.call(this);
   if (linesToRemove && !Array.isArray(linesToRemove)) {
     throw new Error('argument should be an array');
@@ -14,10 +14,9 @@ function linesSkipper(linesToRemove) {
   this._buffer         = '';
 }
 
-util.inherits(linesSkipper, Transform);
-module.exports = linesSkipper;
+util.inherits(LinesSkipper, Transform);
 
-linesSkipper.prototype._transform = function (chunk, encoding, done) {
+LinesSkipper.prototype._transform = function (chunk, encoding, done) {
   this._buffer += chunk.toString();
 
   var index = this._buffer.indexOf('\n');
@@ -40,7 +39,11 @@ linesSkipper.prototype._transform = function (chunk, encoding, done) {
   done();
 };
 
-linesSkipper.prototype._flush = function (done) {
+LinesSkipper.prototype._flush = function (done) {
   this.push(this._buffer);
   done();
+};
+
+module.exports = function (linesToRemove) {
+  return new LinesSkipper(linesToRemove);
 };

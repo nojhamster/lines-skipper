@@ -13,18 +13,18 @@ npm install lines-skipper
 ## Usage
 
 ```javascript
-  var Skipper = require('lines-skipper');
+  var skip = require('lines-skipper');
 
   readStream
-  .pipe(new Skipper([2,4,6])) // skip lines 2, 4 and 6
+  .pipe(skip([2,4,6])) // skip lines 2, 4 and 6
   .pipe(writeStream);
 ```
 
 ## Example
 
 ```javascript
-  var Skipper = require('lines-skipper');
-  var skipper = new Skipper([2,4,6]);
+  var skip = require('lines-skipper');
+  var skipper = skip([2,4,6]);
 
   var result = '';
   

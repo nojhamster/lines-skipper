@@ -42,4 +42,5 @@ linesSkipper.prototype._transform = function (chunk, encoding, done) {
 
 linesSkipper.prototype._flush = function (done) {
   this.push(this._buffer);
+  done();
 };

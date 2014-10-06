@@ -1,0 +1,27 @@
+{
+  "name": "lines-skipper",
+  "version": "0.0.1",
+  "description": "a small module to skip lines in a stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nojhamster/lines-skipper.git"
+  },
+  "keywords": [
+    "lines",
+    "skip",
+    "stream"
+  ],
+  "author": "nojhamster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nojhamster/lines-skipper/issues"
+  },
+  "homepage": "https://github.com/nojhamster/lines-skipper",
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "lines-skipper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a small module to skip lines in a stream",
   "main": "index.js",
   "scripts": {
